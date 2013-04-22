@@ -1,3 +1,6 @@
+require 'redmine'
+require 'redmine_subtask_fields'
+
 Redmine::Plugin.register :redmine_subtask_fields do
   name 'Redmine Subtask Fields plugin'
   author 'Ilya Kolodnik'
