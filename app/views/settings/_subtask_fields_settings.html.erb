@@ -1,35 +1,12 @@
-<p> hello </p>
 <ul>
+  <% [:tracker, :parent_issue, :category, :assigned_to, :priority, :fixed_version, :status].each do |setting| %>
+    <li>
+      <%= check_box_tag "settings[#{setting}_id]", true, @settings["#{setting}_id"] %>
+      <%=t("field_#{setting}") %>
+    </li>
+  <% end %>
   <li>
-    <%= check_box_tag 'settings[tracker_id]', @settings['tracker_id'], @settings['tracker_id'] %>
-    Tracker
-  </li>
-  <li>
-    <%= check_box_tag 'settings[parent_issue_id]', @settings['parent_issue_id'], @settings['parent_issue_id'] %>
-    Parent
-  </li>
-  <li>
-    <%= check_box_tag 'settings[category_id]', @settings['category_id'], @settings['category_id'] %>
-    Category
-  </li>
-  <li>
-    <%= check_box_tag 'settings[assigned_to_id]', @settings['assigned_to_id'], @settings['assigned_to_id'] %>
-    Assigned to
-  </li>
-  <li>
-    <%= check_box_tag 'settings[priority_id]', @settings['priority_id'], @settings['priority_id'] %>
-    Priority
-  </li>
-  <li>
-    <%= check_box_tag 'settings[fixed_version_id]', @settings['fixed_version_id'], @settings['fixed_version_id'] %>
-    Version
-  </li>
-  <li>
-    <%= check_box_tag 'settings[status_id]', @settings['status_id'], @settings['status_id'] %>
-    Status
-  </li>
-  <li>
-    <%= check_box_tag 'settings[done_ratio]', @settings['done_ratio'], @settings['done_ratio'] %>
-    Done ratio
+    <%= check_box_tag "settings[done_ratio]", true, @settings['done_ratio'] %>
+    <%=t("field_done_ratio") %>
   </li>
 </ul>

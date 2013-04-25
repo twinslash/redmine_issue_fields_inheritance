@@ -4,17 +4,17 @@ require 'redmine_subtask_fields'
 Redmine::Plugin.register :redmine_subtask_fields do
   name 'Redmine Subtask Fields plugin'
   author 'Ilya Kolodnik'
-  description 'This plugin changes some fields when creating a subtask'
-  version '0.0.1'
+  description 'This plugin saves some fields from previous issue to next'
+  version '0.0.4'
   author_url 'mailto:ilya.kolodnik@gmail.com'
-  settings :default => {'tracker_id' => true,
-                        'parent_issue_id' => true,
-                        'category_id' => true,
-                        'assigned_to_id' => true,
-                        'priority_id' => true,
-                        'fixed_version_id' => true,
-                        'status_id' => true,
-                        'done_ratio' => true},
+  settings :default => {'tracker_id' => false,
+                        'parent_issue_id' => false,
+                        'category_id' => false,
+                        'assigned_to_id' => false,
+                        'priority_id' => false,
+                        'fixed_version_id' => false,
+                        'status_id' => false,
+                        'done_ratio' => false},
            :partial => 'settings/subtask_fields_settings'
 
 end
