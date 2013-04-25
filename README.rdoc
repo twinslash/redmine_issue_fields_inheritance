@@ -1,3 +1,2 @@
-= redmine_subtask_fields
-
-Description goes here
+= Redmine Issue Fields Inheritance
+Is used for copying some fields from previous issue to next.

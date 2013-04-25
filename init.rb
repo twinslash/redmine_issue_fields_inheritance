@@ -1,12 +1,13 @@
 require 'redmine'
-require 'redmine_subtask_fields'
+require 'redmine_issue_fields_inheritance'
 
-Redmine::Plugin.register :redmine_subtask_fields do
-  name 'Redmine Subtask Fields plugin'
-  author 'Ilya Kolodnik'
+Redmine::Plugin.register :redmine_issue_fields_inheritance do
+  name 'Redmine Issue Fields Inheritance'
+  author '//Twinslash'
   description 'This plugin saves some fields from previous issue to next'
   version '0.0.4'
-  author_url 'mailto:ilya.kolodnik@gmail.com'
+  url         'https://github.com/twinslash/redmine_issue_fields_inheritance'
+  author_url  'http://twinslash.com'
   settings :default => {'tracker_id' => false,
                         'parent_issue_id' => false,
                         'category_id' => false,
@@ -15,6 +16,6 @@ Redmine::Plugin.register :redmine_subtask_fields do
                         'fixed_version_id' => false,
                         'status_id' => false,
                         'done_ratio' => false},
-           :partial => 'settings/subtask_fields_settings'
+           :partial => 'settings/issue_fields_inheritance_settings'
 
 end

@@ -27,7 +27,7 @@ module PreviousIssueParams
                 :fixed_version_id => @issue.fixed_version_id,
                 :status_id => @issue.status_id,
                 :done_ratio => @issue.done_ratio
-              }.reject {|k,v| v.nil? || !Setting.plugin_redmine_subtask_fields[k]}
+              }.reject {|k,v| v.nil? || !Setting.plugin_redmine_issue_fields_inheritance[k]}
               redirect_to new_project_issue_path(@issue.project, :issue => attrs)
             }
             format.api  { render :action => 'show', :status => :created, :location => issue_url(@issue) }
