@@ -5,7 +5,7 @@ module SubtaskFieldsIssueHelperPatch
       def link_to_new_subtask(issue)
         attrs = {
                 :tracker_id => issue.tracker_id,
-                :parent_issue_id => issue.parent_issue_id,
+                :parent_issue_id => issue.id,
                 :category_id => issue.category_id,
                 :assigned_to_id => issue.assigned_to_id,
                 :priority_id => issue.priority_id,
